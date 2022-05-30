@@ -9,7 +9,7 @@ defmodule Cache.ApiToConfig do
 
   def get_caching_client, do: Keyword.fetch!(@compile_config, :caching_client)
 
-  def get_pool_size, do: Keyword.fetch!(config(), :pool_size)
+  def get_pool_size, do: Keyword.fetch!(@compile_config, :pool_size)
 
   defp config, do: Application.get_env(:cache, __MODULE__, [])
 end
